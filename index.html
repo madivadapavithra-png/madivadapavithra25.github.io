@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavithra Madivada | Data Analyst Portfolio</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern Premium Dark Theme Layout */
+        :root {
+            --bg-color: #0b0c10;
+            --card-bg: #1f2833;
+            --main-white: #ffffff;
+            --gray-text: #a9b7c6;
+            --purple-neon: #a370f7;
+            --purple-hover: #8247e5;
+            --text-color: #c5a1ff; 
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--main-white);
+            line-height: 1.6;
+        }
+
+        /* Top Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(11, 12, 16, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: bold;
+            color: var(--purple-neon);
+            font-size: 1.2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            color: var(--gray-text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--purple-neon);
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin: 0 0 10px 0;
+            letter-spacing: 1px;
+        }
+
+        .hero .subtitle {
+            color: var(--purple-neon);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .hero .bio {
+            max-width: 650px;
+            color: var(--gray-text);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        /* Buttons & Socials */
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            background-color: var(--purple-neon);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--purple-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--purple-neon);
+            color: var(--purple-neon);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--purple-neon);
+            color: white;
+        }
+
+        /* Main Section Containers */
+        .container {
+            padding: 20px 5% 40px 5%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 10px;
+            color: var(--purple-neon);
+            margin-top: 40px;
+        }
+
+        /* Recruiter Skills Grid Layout */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skills-category {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid var(--purple-neon);
+        }
+
+        .skills-category h3 {
+            margin-top: 0;
+            color: var(--main-white);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skills-category h3 i {
+            color: var(--purple-neon);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 0;
+            list-style: none;
+            margin: 15px 0 0 0;
+        }
+
+        .skill-tag {
+            background-color: rgba(163, 112, 247, 0.1);
+            color: var(--text-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(163, 112, 247, 0.2);
+        }
+
+        /* Cards for Projects & Certifications */
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--purple-neon);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: var(--main-white);
+            font-size: 1.3rem;
+        }
+
+        .project-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0;
+        }
+
+        .project-card li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .project-card strong {
+            color: var(--purple-neon);
+        }
+
+        .repo-link {
+            display: inline-block;
+            margin-top: 12px;
+            color: #4da6ff;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .repo-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Certification Layout styling */
+        .cert-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .cert-info h4 {
+            margin: 0;
+            color: var(--main-white);
+            font-size: 1rem;
+        }
+
+        .cert-info p {
+            margin: 5px 0 0 0;
+            color: var(--gray-text);
+            font-size: 0.85rem;
+        }
+
+        .cert-badge {
+            background-color: var(--purple-neon);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .cert-badge:hover {
+            background-color: var(--purple-hover);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .nav-links {
+                display: none; 
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .btn-container {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }
+            .btn {
+                width: 80%;
+                text-align: center;
+            }
+            .cert-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">Pavithra M.</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header / Hero Profile Header Section -->
+    <section class="hero" id="about">
+        <h1>Hi, I'm Pavithra Madivada 👋</h1>
+        <div class="subtitle">Data Analyst | SQL | Python | Tableau | Power BI</div>
+        
+        <p class="bio">
+            Welcome to my data portfolio! I specialize in turning messy, complex datasets into actionable business insights and interactive visual stories.
+        </p>
+
+        <div class="btn-container">
+            <a href="https://www.linkedin.com/in/pavithra-madivada-63177a191?utm_source=share_via&utm_content=profile&utm_medium=member_android" class="btn" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="mailto:madivadapavithra@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+    </section>
+
+    <!-- Recruiter Technical Toolkit Section -->
+    <div class="container" id="skills">
+        <h2>🛠️ Technical Toolkit</h2>
+        <div class="skills-grid">
+            <div class="skills-category">
+                <h3><i class="fas fa-code"></i> Languages</h3>
+                <ul class="skills-list">
+                    <li class="skill-tag">SQL</li>
+                    <li class="skill-tag">Python</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3><i class="fas fa-chart-bar"></i> BI Tools</h3>
+                <ul class="skills-list">
+                    <li class="skill-tag">Power BI</li>
+                    <li class="skill-tag">Tableau</li>
+                    <li class="skill-tag">Looker Studio</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3><i class="fas fa-database"></i> Databases & Frameworks</h3>
+                <ul class="skills-list">
+                    <li class="skill-tag">PostgreSQL</li>
+                    <li class="skill-tag">MySQL</li>
+                    <li class="skill-tag">Pandas / NumPy</li>
+                    <li class="skill-tag">Scikit-Learn</li>
+                    <li class="skill-tag">Excel (Advanced)</li>
+                    <li class="skill-tag">Git</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Grid Container -->
+    <div class="container" id="projects">
+        <h2>🚀 Featured Projects</h2>
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+            <h3>1. E-commerce Sales Analysis</h3>
+            <ul>
+                <li><strong>Tech Stack:</strong> SQL, Python (Pandas), Tableau / Power BI</li>
+                <li><strong>The Problem:</strong> An online retail platform needed to identify declining product categories and optimize inventory levels ahead of peak shopping seasons.</li>
+                <li><strong>The Solution:</strong> Cleaned and aggregated transactional data across multiple regions. Conducted a cohort analysis to measure customer retention and calculated product affinity to find common cross-selling opportunities.</li>
+                <li><strong>The Result:</strong> Identified a <strong>14% drop</strong> in repeating electronics sales and discovered a high-affinity bundling strategy that boosted average order value (AOV) by <strong>6.5%</strong>.</li>
+            </ul>
+            <a href="https://github.com/madivadapavithra-png/mobile-data-science-portfolio/blob/main/Ecommerce_Sales_Analysis.ipynb" class="repo-link" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+            <h3>2. HR Analytics Dashboard</h3>
+            <ul>
+                <li><strong>Tech Stack:</strong> Power BI / Tableau, Excel, SQL</li>
+                <li><strong>The Problem:</strong> High operational costs were being driven by a sudden increase in employee turnover, but HR lacked visibility into the core drivers of attrition.</li>
+                <li><strong>The Solution:</strong> Built a comprehensive HR analytics dashboard integrating employee demographics, performance ratings, tenure, and exit interview sentiment data.</li>
+                <li><strong>The Result:</strong> Pinpointed that mid-level software engineering roles with over-average overtime had a <strong>22% higher attrition rate</strong>, allowing management to implement targeted retention bonuses.</li>
+            </ul>
+            <a href="https://github.com/madivadapavithra-png/mobile-data-science-portfolio/blob/main/HR_Analytics_Project.ipynb.txt" class="repo-link" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+            <h3>3. Financial Trading Bot</h3>
+            <ul>
+                <li><strong>Tech Stack:</strong> Python (Pandas, NumPy, Backtrader), REST APIs</li>
+                <li><strong>The Problem:</strong> Executing manual cryptocurrency or stock trades introduces human emotional bias and limits trading frequency based on screen time.</li>
+                <li><strong>The Solution:</strong> Developed an algorithmic trading bot utilizing technical indicators like Moving Average Convergence Divergence (MACD) and Relative Strength Index (RSI). Connected the script to live exchange APIs and engineered backtesting logic on 2 years of historical data.</li>
+                <li><strong>The Result:</strong> Automated risk management protocols that achieved an <strong>11.2% risk-adjusted return (Sharpe Ratio of 1.4)</strong> over the backtested timeframe while maintaining a strict 2% maximum stop-loss per trade.</li>
+            </ul>
+            <a href="https://github.com/madivadapavithra-png/mobile-data-science-portfolio/blob/main/Financial_Trading_Bot.ipynb.txt" class="repo-link" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+        </div>
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+            <h3>4. Housing Market ML Predictor</h3>
+            <ul>
+                <li><strong>Tech Stack:</strong> Python (Scikit-Learn, XGBoost, Matplotlib)</li>
+                <li><strong>The Problem:</strong> Property buyers and real estate agents struggle with inaccurate, lagging home price estimates based solely on regional averages.</li>
+                <li><strong>The Solution:</strong> Built an end-to-end Machine Learning pipeline to predict residential real estate values. Engineered features out of historical sales, neighborhood crime rates, school ratings, and macro-economic interest rates.</li>
+                <li><strong>The Result:</strong> Successfully trained an XGBoost regression model that achieved a <strong>Root Mean Squared Error (RMSE) under 8%</strong> on unseen test data, significantly outperforming baseline linear regression models.</li>
+            </ul>
+            <a href="https://github.com/madivadapavithra-png/mobile-data-science-portfolio/blob/main/Housing_ML_Predictor.ipynb.txt" class="repo-link" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+        </div>
+
+        <!-- PROJECT 5 -->
+        <div class="project-card">
+            <h3>5. Healthcare ER Optimization</h3>
+            <ul>
+                <li><strong>Tech Stack:</strong> Python (SimPy / Pandas), SQL, Looker Studio</li>
+                <li><strong>The Problem:</strong> Hospital Emergency Rooms faced critical bottlenecks, leading to long patient wait times and high rates of patients leaving without being seen (LWBS).</li>
+                <li><strong>The Solution:</strong> Extracted and analyzed emergency room intake logs. Modeled patient flow bottlenecks and simulated staffing reallocations across different shifts using historical peak arrival times.</li>
+                <li><strong>The Result:</strong> Suggested a data-driven scheduling adjustment that optimized nursing staff levels during peak hours, reducing average patient wait times by <strong>18 minutes</strong>.</li>
+            </ul>
+            <a href="https://github.com/madivadapavithra-png/mobile-data-science-portfolio/blob/main/Healthcare_ER_Optimization.ipynb.txt" class="repo-link" target="_blank"><i class="fab fa-github"></i> GitHub Repository</a>
+        </div>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="container" id="certifications">
+        <h2>📜 Professional Certifications</h2>
+        
+        <!-- CERT 1 -->
+        <div class="cert-item">
+            <div class="cert-info">
+                <h4>Introduction to Data Science</h4>
+                <p>Cisco Networking Academy</p>
+            </div>
+            <a href="https://www.credly.com/badges/860f7251-3696-4e87-b096-ea863a17a0f8/public_url" class="cert-badge" target="_blank">Verify Credentials</a>
+        </div>
+        
+        <!-- CERT 2 -->
+        <div class="cert-item">
+            <div class="cert-info">
+                <h4>Python Essentials 1</h4>
+                <p>Cisco Networking Academy</p>
+            </div>
+            <a href="https://www.credly.com/badges/093f8285-83c9-4d25-b55c-8404af706fc6/public_url" class="cert-badge" target="_blank">Verify Credentials</a>
+        </div>
+
+        <!-- CERT 3 -->
+        <div class="cert-item">
+            <div class="cert-info">
+                <h4>Python Essentials 2</h4>
+                <p>Cisco Networking Academy</p>
+            </div>
+            <a href="https://www.credly.com/badges/28684110-7b36-41f7-9c7b-2706b1b9e747/public_url" class="cert-badge" target="_blank">Verify Credentials</a>
+        </div>
+
+        <!-- CERT 4 -->
+        <div class="cert-item">
+            <div class="cert-info">
+                <h4>Python for Data Analytics</h4>
+                <p>DeepLearning.AI</p>
+            </div>
+            <a href="https://learn.deeplearning.ai/certificates/51f4869f-beca-43a5-92e9-c8eb33abe524" class="cert-badge" target="_blank">Verify Credentials</a>
+        </div>
+
+        <!-- CERT 5 -->
+        <div class="cert-item">
+            <div class="cert-info">
+                <h4>Foundations in Data Analytics</h4>
+                <p>DeepLearning.AI</p>
+            </div>
+            <a href="https://learn.deeplearning.ai/certificates/48649117-b868-41de-9525-6f94f6a198b5" class="cert-badge" target="_blank">Verify Credentials</a>
+        </div>
+
+        <!-- CERT 6 -->
+        <div class="cert-item">
+            <div class="cert-info">
+                <h4>Applied Statistics</h4>
+                <p>DeepLearning.AI</p>
+            </div>
+            <a href="https://learn.deeplearning.ai/certificates/6456c13c-b421-400b-83c2-e4772c7012d5" class="cert-badge" target="_blank">Verify Credentials</a>
+        </div>
+    </div>
+
+</body>
+</html>
